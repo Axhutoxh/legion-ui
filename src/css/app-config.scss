@@ -1,0 +1,498 @@
+// scss modules
+@use 'sass:map';
+
+/* ====== theme colors ====== */
+$red-variants: (
+  '25': #ffebee,
+  '50': #ffcdd2,
+  '100': #ef9a9a,
+  '200': #e57373,
+  '300': #ef5350,
+  '400': #f44336,
+  '500': #e53935,
+  '600': #d32f2f,
+  '650': #c62828,
+  '700': #b71c1c,
+  '800': #ff8a80,
+  '850':#ff5252,
+  '900': #ff1744,
+  '950':#d50000
+);
+
+$pink-variants: (
+'25': #fce4ec ,
+'50': #f8bbd0 ,
+'100': #f48fb1 ,
+'200': #f06292 ,
+'300': #ec407a ,
+'400': #e91e63 ,
+'500': #d81b60 ,
+'600': #c2185b ,
+'650': #ad1457 ,
+'700': #880e4f ,
+'750': #ff80ab ,
+'800': #ff4081 ,
+'850': #f50057 ,
+'900': #c51162 ,
+);
+
+$purple-variants:(
+'25': #f3e5f5 ,
+'50': #e1bee7 ,
+'100': #ce93d8 ,
+'200': #ba68c8 ,
+'300': #ab47bc ,
+'400': #9c27b0 ,
+'500': #8e24aa ,
+'600': #7b1fa2 ,
+'650': #6a1b9a ,
+'700': #4a148c ,
+'750': #ea80fc ,
+'800': #e040fb ,
+'850': #d500f9 ,
+'900': #aa00ff ,
+);
+
+$deep-purple-variants:(
+'25': #ede7f6 ,
+'50': #d1c4e9 ,
+'100': #b39ddb ,
+'200': #9575cd ,
+'300': #7e57c2 ,
+'400': #673ab7 ,
+'500': #5e35b1 ,
+'600': #512da8 ,
+'650': #4527a0 ,
+'700': #311b92 ,
+'750': #b388ff ,
+'800': #7c4dff ,
+'850': #651fff ,
+'900': #6200ea ,
+);
+
+$indigo-variants:(
+'25': #e8eaf6 ,
+'50': #c5cae9 ,
+'100': #9fa8da ,
+'200': #7986cb ,
+'300': #5c6bc0 ,
+'400': #3f51b5 ,
+'500': #3949ab ,
+'600': #303f9f ,
+'650': #283593 ,
+'700': #1a237e ,
+'750': #8c9eff ,
+'800': #536dfe ,
+'850': #3d5afe ,
+'900': #304ffe ,
+);
+
+$blue-variants:(
+'25': #e3f2fd ,
+'50': #bbdefb ,
+'100': #90caf9 ,
+'200': #64b5f6 ,
+'300': #42a5f5 ,
+'400': #2196f3 ,
+'500': #1e88e5 ,
+'600': #1976d2 ,
+'650': #1565c0 ,
+'700': #0d47a1 ,
+'750': #82b1ff ,
+'800': #448aff ,
+'850': #2979ff ,
+'900': #2962ff ,
+);
+
+$light-blue-variants:(
+'25': #e1f5fe ,
+'50': #b3e5fc ,
+'100': #81d4fa ,
+'200': #4fc3f7 ,
+'300': #29b6f6 ,
+'400': #03a9f4 ,
+'500': #039be5 ,
+'600': #0288d1 ,
+'650': #0277bd ,
+'700': #01579b ,
+'750': #80d8ff ,
+'800': #40c4ff ,
+'850': #00b0ff ,
+'900': #0091ea ,
+);
+
+$cyan-variants:(
+'25': #e0f7fa ,
+'50': #b2ebf2 ,
+'100': #80deea ,
+'200': #4dd0e1 ,
+'300': #26c6da ,
+'400': #00bcd4 ,
+'500': #00acc1 ,
+'600': #0097a7 ,
+'650': #00838f ,
+'700': #006064 ,
+'750': #84ffff ,
+'800': #18ffff ,
+'850': #00e5ff ,
+'900': #00b8d4 ,
+);
+
+$teal-variants:(
+'25': #e0f2f1 ,
+'50': #b2dfdb ,
+'100': #80cbc4 ,
+'200': #4db6ac ,
+'300': #26a69a ,
+'400': #009688 ,
+'500': #00897b ,
+'600': #00796b ,
+'650': #00695c ,
+'700': #004d40 ,
+'750': #a7ffeb ,
+'800': #64ffda ,
+'850': #1de9b6 ,
+'900': #00bfa5 ,
+);
+
+$green-variants:(
+'25': #e8f5e9 ,
+'50': #c8e6c9 ,
+'100': #a5d6a7 ,
+'200': #81c784 ,
+'300': #66bb6a ,
+'400': #4caf50 ,
+'500': #43a047 ,
+'600': #388e3c ,
+'650': #2e7d32 ,
+'700': #1b5e20 ,
+'750': #b9f6ca ,
+'800': #69f0ae ,
+'850': #00e676 ,
+'900': #00c853 ,
+);
+
+$light-green-variants:(
+'25': #f1f8e9 ,
+'50': #dcedc8 ,
+'100': #c5e1a5 ,
+'200': #aed581 ,
+'300': #9ccc65 ,
+'400': #8bc34a ,
+'500': #7cb342 ,
+'600': #689f38 ,
+'650': #558b2f ,
+'700': #33691e ,
+'750': #ccff90 ,
+'800': #b2ff59 ,
+'850': #76ff03 ,
+'900': #64dd17 ,
+);
+
+$lime-variants:(
+'25': #f9fbe7 ,
+'50': #f0f4c3 ,
+'100': #e6ee9c ,
+'200': #dce775 ,
+'300': #d4e157 ,
+'400': #cddc39 ,
+'500': #c0ca33 ,
+'600': #afb42b ,
+'650': #9e9d24 ,
+'700': #827717 ,
+'750': #f4ff81 ,
+'800': #eeff41 ,
+'850': #c6ff00 ,
+'900': #aeea00 ,
+);
+
+$yellow-variants:(
+'25': #fffde7 ,
+'50': #fff9c4 ,
+'100': #fff5a1 ,
+'200': #fff176 ,
+'300': #ffee58 ,
+'400': #ffeb3b ,
+'500': #fdd835 ,
+'600': #fbc02d ,
+'650': #f9a825 ,
+'700': #f57f17 ,
+'750': #ffff8d ,
+'800': #ffff00 ,
+'850': #ffea00 ,
+'900': #ffd600 ,
+);
+
+$amber-variants:(
+'25': #fff8e1 ,
+'50': #ffecb3 ,
+'100': #ffe082 ,
+'200': #ffd54f ,
+'300': #ffca28 ,
+'400': #ffc107 ,
+'500': #ffb300 ,
+'600': #ffa000 ,
+'650': #ff8f00 ,
+'700': #ff6f00 ,
+'750': #ffe57f ,
+'800': #ffd740 ,
+'850': #ffc400 ,
+'900': #ffab00 ,
+);
+
+$orange-variants:(
+'25': #fff3e0 ,
+'50': #ffe0b2 ,
+'100': #ffcc80 ,
+'200': #ffb74d ,
+'300': #ffa726 ,
+'400': #ff9800 ,
+'500': #fb8c00 ,
+'600': #f57c00 ,
+'650': #ef6c00 ,
+'700': #e65100 ,
+'750': #ffd180 ,
+'800': #ffab40 ,
+'850': #ff9100 ,
+'900': #ff6d00 ,
+);
+
+$deep-orange-variants:(
+'25': #fbe9e7 ,
+'50': #ffccbc ,
+'100': #ffab91 ,
+'200': #ff8a65 ,
+'300': #ff7043 ,
+'400': #ff5722 ,
+'500': #f4511e ,
+'600': #e64a19 ,
+'650': #d84315 ,
+'700': #bf360c ,
+'750': #ff9e80 ,
+'800': #ff6e40 ,
+'850': #ff3d00 ,
+'900': #dd2c00 ,
+);
+
+$brown-variants:(
+'25': #efebe9 ,
+'50': #d7ccc8 ,
+'100': #bcaaa4 ,
+'200': #8d6e63 ,
+'300': #795548 ,
+'400': #6d4c41 ,
+'500': #5d4037 ,
+'600': #4e342e ,
+'650': #3e2723 ,
+);
+
+
+
+$blue-grey-variants:(
+'25': #eceff1 ,
+'50': #cfd8dc ,
+'100': #b0bec5 ,
+'200': #90a4ae ,
+'300': #78909c ,
+'400': #607d8b ,
+'500': #546e7a ,
+'600': #455a64 ,
+'650': #37474f ,
+);
+
+
+// primary color variants map
+$secondary-variants: (
+  '25': #fffdf4,
+  '50': #fffce9,
+  '100': #fef9d3,
+  '200': #fef6bd,
+  '300': #fdf3a7,
+  '400': #fded7a,
+  '500': #fce74e,
+  '600': #fbe122,
+  '650': #e9bd36,
+  '700': #c9b41b,
+  '800': #978714,
+  '900': #645a0e
+);
+
+// secondary color variants map
+$primary-variants: (
+  '25': #f3f8fc,
+  '30': #f0f9ff,
+  '50': #e8f1f9,
+  '75': #eff8ff,
+  '80': #edf5fd,
+  '100': #d1e3f3,
+  '200': #bad4ed,
+  '250': #b8dbff,
+  '300': #a3c6e7,
+  '350': #8cb8e0,
+  '400': #75aada,
+  '450': #61aaf0,
+  '500': #478dce,
+  '600': #1971c2,
+  '625': #175cd3,
+  '650': #152141,
+  '700': #026aa2,
+  '800': #0f4474,
+  '900': #0a2d4e
+);
+
+// grey color variants map
+$grey-variants: (
+  '15': #e4e7ec,
+  '20': #fcfcfd,
+  '25': #f9f9fa,
+  '30': #f9fafb,
+  '50': #f3f4f4,
+  '60': #f2f4f7,
+  '75': #f1f3f5,
+  '100': #e7e8ea,
+  '200': #dbdddf,
+  '250': #d0d5dd,
+  '300': #cfd2d5,
+  '400': #b6bbc0,
+  '450': #adb5bd,
+  '500': #9ea5ab,
+  '550': #98a2b3,
+  '600': #868e96,
+  '650': #667085,
+  '700': #495057,
+  '725': #434d57,
+  '750': #344054,
+  '800': #343a40,
+  '900': #212529,
+  '925': #151821,
+  '950': #101828
+);
+
+// positive color variants map
+$positive-variants: (
+  '25': #f6fef9,
+  '50': #ecfdf3,
+  '100': #d1fadf,
+  '200': #a6f4c5,
+  '300': #6ce9a6,
+  '400': #32d583,
+  '500': #12b76a,
+  '600': #039855,
+  '650': #2b8a3e,
+  '700': #027a48,
+  '800': #05603a,
+  '900': #054f31
+);
+
+// negative color variants map
+$negative-variants: (
+  '25': #fffbfa,
+  '50': #fef3f2,
+  '100': #fee4e2,
+  '200': #fecdca,
+  '300': #fda29b,
+  '400': #f97066,
+  '500': #f04438,
+  '600': #d92d20,
+  '700': #b42318,
+  '800': #912018,
+  '900': #7a271a
+);
+
+// info color variants map
+$info-variants: $secondary-variants;
+
+// warning color variants map
+$warning-variants: (
+  '25': #fffcf5,
+  '50': #fffaeb,
+  '75': #fff3bf,
+  '100': #fef0c7,
+  '200': #fedf89,
+  '300': #fec84b,
+  '400': #fdb022,
+  '500': #f79009,
+  '600': #dc6803,
+  '700': #b54708,
+  '800': #93370d,
+  '900': #7a2e0e
+);
+
+
+
+// theme colors
+// combination of single color as well as variants map
+
+$theme-colors: (
+  'red':$red-variants,
+  'primary': $primary-variants,
+  'secondary': $secondary-variants,
+  'positive': $positive-variants,
+  'negative': $negative-variants,
+  'info': $info-variants,
+  'warning': $warning-variants,
+  'light': #f5f5f5,
+  'white': #ffffff,
+  'iconColor': #152141,
+  'pink':$pink-variants,
+  'purple':$purple-variants,
+  'indigo':$indigo-variants,
+  'blue':$blue-variants,
+  'light-blue':$light-blue-variants,
+  'cyan':$cyan-variants,
+  'teal':$teal-variants,
+  'green':$green-variants,
+  'light-green':$light-green-variants,
+  'lime':$lime-variants,
+  'yellow':$yellow-variants,
+  'amber':$amber-variants,
+  'orange':$orange-variants,
+  'deep-orange':$deep-orange-variants,
+  'brown':$brown-variants,
+  'grey':$grey-variants,
+  'blue-grey':$blue-grey-variants,
+
+);
+
+/* === box and border related variables */
+
+// box model side values
+$box-sides: (
+  't': top,
+  'b': bottom,
+  'l': left,
+  'r': right,
+  'x': [left right],
+  'y': [top bottom],
+  'a': [top right bottom left]
+);
+
+
+$rounded-borders-variants:(
+  xs:2,
+  2xs:4,
+  sm:6,
+  md:8,
+  lg:12,
+  xl:16,
+  2xl:32
+);
+
+$text-weights: (
+  thin: 100,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  bolder: 900
+) !default;
+
+
+
+
+// border sizes
+$border-sizes: 2, 4, 8;
+
+// notification types
+$notification-types: (primary warning negative);

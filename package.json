@@ -1,0 +1,41 @@
+{
+  "name": "luca",
+  "version": "0.0.1",
+  "description": "UI Framework for React",
+  "main": "dist/index.js",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npx rollup -c"
+  },
+  "author": "Ashutosh Chandra",
+  "license": "ISC",
+  "dependencies": {
+    "material-icons": "^1.13.12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.17.0",
+    "sass": "^1.69.4",
+    "styled-components": "^6.1.0"
+  },
+  "peerDependencies": {
+    "material-icons": "^1.13.12",
+    "prop-types": "^15.7.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.17.0",
+    "sass": "^1.69.4",
+    "styled-components": "^6.1.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/react": "^18.2.67",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.17.0",
+    "rollup": "^4.13.0",
+    "rollup-plugin-scss": "^4.0.0",
+    "tslib": "^2.6.2"
+  }
+}

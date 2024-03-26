@@ -1,0 +1,203 @@
+// scss modules
+@use 'sass:map';
+// use app-config file
+@use './app-config.scss' as config;
+// use app-utils file
+@use './app-utils.scss' as utils;
+
+@import './vr.variable.scss';
+
+
+
+
+/* ===== classes from config ====== */
+
+// color classes for text, bg, border, stroke
+@each $name, $value in config.$theme-colors {
+  @if type-of($value) == map {
+    // text-color
+    .text-#{$name} {
+      color: map.get($value, '600') !important;
+    }
+
+    // bg-color
+    .bg-#{$name} {
+      background: map.get($value, '600') !important;
+    }
+
+    // border-color
+    .border-#{$name} {
+      border-color: map.get($value, '600') !important;
+    }
+
+    // stroke-color
+    .stroke-#{$name} {
+      stroke: map.get($value, '600') !important;
+    }
+
+    @each $variant, $color in $value {
+      // text-color
+      .text-#{$name}-#{$variant} {
+        color: $color !important;
+      }
+
+      // bg-color
+      .bg-#{$name}-#{$variant} {
+        background: $color !important;
+      }
+
+      // border-color
+      .border-#{$name}-#{$variant} {
+        border-color: $color !important;
+      }
+
+      // stroke-color
+      // stroke-color
+      .stroke-#{$name}-#{$variant} {
+        stroke: $color !important;
+      }
+    }
+  } @else {
+    // text-color
+    .text-#{$name} {
+      color: $value !important;
+    }
+
+    // bg-color
+    .bg-#{$name} {
+      background: $value !important;
+    }
+
+    // border-color
+    .border-#{$name} {
+      border-color: $value !important;
+    }
+
+    // stroke-color
+    .stroke-#{$name} {
+      stroke: $value !important;
+    }
+  }
+}
+
+// border, border-width classes
+@each $side, $side-value in config.$box-sides {
+  @if type-of($side-value) == list {
+    .border-#{$side} {
+      @each $part in $side-value {
+        border-#{$part}-width: 1px;
+        border-#{$part}-style: solid;
+      }
+    }
+    @each $size in config.$border-sizes {
+      .border-#{$side}-#{$size} {
+        @each $part in $side-value {
+          border-#{$part}-width: #{$size}px;
+          border-#{$part}-style: solid;
+        }
+      }
+    }
+  } @else {
+    .border-#{$side} {
+      border-#{$side-value}-width: 1px;
+      border-#{$side-value}-style: solid;
+    }
+
+    @each $size in config.$border-sizes {
+      .border-#{$side}-#{$size} {
+        border-#{$side-value}-width: #{$size}px;
+        border-#{$side-value}-style: solid;
+      }
+      
+    }
+  }
+}
+
+// rounded-borders classes
+@each $size, $value in config.$rounded-borders-variants {
+  .rounded-borders-#{$size} {
+    border-radius: #{$value}px !important;
+  }
+
+  @each $type,$sizes in config.$box-sides{
+    @if type-of($sizes) == list {
+      .p#{$type}-#{$size} {
+        @each $part in $sizes {
+          padding-#{$part}:#{$value}px ;
+        }
+      }
+      .m#{$type}-#{$size} {
+        @each $part in $sizes {
+          margin-#{$part}:#{$value}px ;
+        }
+      }
+    }
+    @else {
+      .p#{$type}-#{$size} {
+        padding-#{$sizes}: #{$value}px ;
+      }
+      .m#{$type}-#{$size} {
+        margin-#{$sizes}: #{$value}px ;
+      }
+    }
+
+  }
+}
+
+@each $name,$value in config.$text-weights{
+  .text-#{$name}{
+    font-weight: #{$value} !important;
+  }
+}
+
+
+.flex{
+  display: flex;
+}
+
+.no-wrap{
+  flex-wrap: nowrap;
+}
+
+.row{
+  flex-direction: row;
+}
+
+.column{
+  flex-direction: column;
+}
+
+.items-center{
+  align-items: center;
+}
+
+
+.justify-center{
+  justify-content: center;
+}
+
+.space-between{
+  justify-content: space-between;
+}
+
+.space-around{
+  justify-content: space-around;
+}
+
+.space-evenly{
+  justify-content: space-evenly;
+}
+
+.pointer-cursor{
+  cursor: pointer;
+}
+
+.btn-effect {
+  cursor: pointer;
+  transition: transform 0.02s ease-in-out; /* Adding transition effect on transform property */
+}
+
+.btn-effect:hover {
+  transform: scale(1.01); /* Scale the button on hover */
+  opacity: 0.85;
+}
