@@ -8,7 +8,7 @@ const Breadcrumbs = (props:any)=>{
         ...props.style,
     }
 
-    const handlePathClick = (index, item)=>{
+    const handlePathClick = (index:any, item:any)=>{
 
       if(props.click){
       
@@ -18,7 +18,7 @@ const Breadcrumbs = (props:any)=>{
 
     return (
         <div style={breadcrumbStyle} className="flex" >
-          {props.crumbs.map((item,i)=>{
+          {props.crumbs.map((item:any,i:any)=>{
             return (
                 typeof item==='string'?
                 <div key={i}  

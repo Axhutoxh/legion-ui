@@ -1,6 +1,6 @@
 {
-  "name": "luca",
-  "version": "0.0.1",
+  "name": "legion-ui",
+  "version": "0.0.13",
   "description": "UI Framework for React",
   "main": "dist/index.js",
   "type": "module",

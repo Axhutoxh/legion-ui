@@ -1,5 +1,6 @@
 import 'material-icons/iconfont/material-icons.css';
-import * as React from 'react';
+import React from 'react';
+
 
 
 const Icon = (props:any)=>{

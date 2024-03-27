@@ -7,14 +7,17 @@ export default defineConfig({
   output: {
     dir: "dist",
     format: "es",
-    name: "pack-to-ui",
+    name: "legion-ui",
   },
   external: ["react", "react-dom"],
   plugins: [
     typescript({ tsconfig: "tsconfig.json" }),
     scss({
+      fileName: 'output.css',
       include: ["/**/*.css", "/**/*.scss", "/**/*.sass"],
-      output: "css/style.css",
+      output: "./css/style.css",
+      outputStyle: "compressed",
       failOnError: true,
-    }),],
+    }),
+  ],
 });
