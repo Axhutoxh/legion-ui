@@ -85,7 +85,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@ashutoshx](https://twitter.com/ashutoshx) - codebufferdrift.com
+Your Name - [@ashutoshsx](https://twitter.com/ashutoshsx) - codebufferdrift.com
 
 Project Link: [https://github.com/Axhutoxh/legion-ui](https://github.com/Axhutoxh/legion-ui)
 
