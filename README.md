@@ -26,7 +26,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Axhutoxh/legion-ui">
-    <img src="public/legion logo.jpg" alt="Logo" width="80" height="80">
+    <img src="public/legion logo.jpg" alt="Logo" width="120" height="120">
   </a>
 
   <h3 align="center">Legion Ui</h3>
