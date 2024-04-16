@@ -1,0 +1,27 @@
+// scss modules
+@use 'sass:map';
+
+// use quasar.variables file
+@use './vr.variable.scss' as variables;
+
+/* === mixins === */
+
+// typography mixin for font styles excluding weight
+@mixin fontStyles($typography) {
+  font-size: map.get($typography, 'size');
+  line-height: map.get($typography, 'line-height');
+  letter-spacing: map.get($typography, 'letter-spacing');
+}
+
+// typography mixin for font styles including weight
+@mixin fontStylesWithWeight($typography) {
+  font-size: map.get($typography, 'size');
+  line-height: map.get($typography, 'line-height');
+  letter-spacing: map.get($typography, 'letter-spacing');
+  font-weight: map.get($typography, 'weight');
+}
+
+// typography mixin for font weight
+@mixin fontWeight($weight) {
+  font-weight: map.get(variables.$text-weights, $weight);
+}

@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+      "jsx": "react",
+      "lib": ["es5", "es6", "dom"],
+      "target": "ES2020",
+      "module": "ESNext",
+      "declaration": true,
+      "declarationDir": "dist",
+      "moduleResolution": "node",
+      "rootDir": "src",
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
+      "esModuleInterop": true,
+      "baseUrl": "src/",
+      "paths": {
+        "common": ["src/common/*"],
+        "components": ["src/components/*"],
+        "hooks": ["src/hooks/*"],
+        "utils": ["src/utils/*"]
+      },
+
+      "strict": true
+    },
+    "cacheDir": ".rollup.tscache"
+  }
